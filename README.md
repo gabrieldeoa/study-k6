@@ -214,3 +214,7 @@ export const options = {
 ```
 
 2. **ramping-arrival-rate:** aumenta a taxa de iterações de forma progressiva.
+
+# Sleep
+
+Tempo de espera de uma VU para pegar uma iteração.
