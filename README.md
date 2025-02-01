@@ -218,3 +218,33 @@ export const options = {
 # Sleep
 
 Tempo de espera de uma VU para pegar uma iteração.
+
+# Relatórios
+
+Uma forma de gerar relatório é usar o pacote externo [k6-reporter](https://raw.githubusercontent.com/benc-uk/k6-reporter/main/dist/bundle.js).
+
+Basta importar e utilizá-lo dentro da função **handleSummary**, essa função captura a saída do cli para o formato configurado.
+
+```js
+export function handleSummary(data) {
+  return {
+    "example_report.html": htmlReport(data),
+  };
+}
+```
+
+Assim a saída padrão na CLI não irá acontecer mas será armazenada no arquivo.
+
+# Dashboard
+
+O plugin agora faz parte do core, então basta rodar o comando com a flag **K6_WEB_DASHBOARD=true** que teremos o dashboard em tempo real.
+
+```cli
+K6_WEB_DASHBOARD=true k6 run example_dashboard.js
+```
+
+Para gerar o relatório do dashboard via CLI basta adicionar a flag **K6_WEB_DASHBOARD_EXPORT:<<report_name>>.html** passando o nome do mesmo.
+
+```cli
+K6_WEB_DASHBOARD=true K6_WEB_DASHBOARD_EXPORT= k6 run example_dashboard.js
+```
