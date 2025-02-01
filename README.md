@@ -248,3 +248,39 @@ Para gerar o relatório do dashboard via CLI basta adicionar a flag **K6_WEB_DAS
 ```cli
 K6_WEB_DASHBOARD=true K6_WEB_DASHBOARD_EXPORT= k6 run example_dashboard.js
 ```
+
+# Grafana Cloud k6
+
+1. Escalabilidade.
+2. Flexibilidade geográfica.
+3. Confiança nos resultados.
+
+Crie uma conta, tem a opção gratuita, pegue o **token** no painel faça login via clio e adicione o **projectID** o objeto abaixo na options:
+
+```cli
+k6 login cloud --token <<token_aqui>>
+
+```
+
+No options:
+
+```js
+ext: {
+    loadimpact: {
+      projectID: "<ID_AQUI>",
+      name: "POC CURSO K6",
+    },
+  }
+```
+
+Para rodar o script na cloud
+
+```cli
+k6 cloud <<script>>
+```
+
+Também temos a possibilidade de rodar localmente e visualizar os resultados via cloud:
+
+```cli
+k6 run --out cloud <<script>>
+```
