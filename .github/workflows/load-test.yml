@@ -23,7 +23,7 @@ jobs:
           mv index.html report/
 
       - name: step 3 - upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: relatorio de testes de performance
           path: report
