@@ -284,3 +284,11 @@ Também temos a possibilidade de rodar localmente e visualizar os resultados via
 ```cli
 k6 run --out cloud <<script>>
 ```
+
+# Testes em frontend
+
+- Navegador: Mede o desempenho do frontend simulando usuários reais acessando a aplicação através do navegador.
+- Protocolo: Mede o desempenho do backend simulando as solicitações subjacentes às ações do usuário.
+- Híbrido: Combinação dos dois anteriores.
+
+Hoje conseguimos testar também o frontend pelo k6, na versão 0.43.0 ou superior.
